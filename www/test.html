@@ -1,0 +1,16 @@
+    _displayNewMsg: function(msg) {
+        var from = __users[msg.from_idx].display;
+        var to = __users[msg.to_idx].display || '大家';
+        var clr = msg.color || '#000';
+        if (msg.to == __info.id) {
+            $("#historyMsg1").append("<p><span class='timespan'>(" + msg.createTime.substr(10, 20) + "): </span>" + from + ' 对[我]' + msg.context + "</p>");
+
+        }
+        else {
+            $("#historyMsg").append("<p><span class='timespan'>(" + msg.createTime.substr(10, 20) + "): </span>" + from + ' 对[ ' + to + ' ]' + msg.context + "</p>");
+
+        }
+
+    }
+
+    <a tabindex='0' role='button' data-toggle='popover' data-trigger='focus'  data-placement='right' data-content='list-time'>可消失的弹出框</a>
